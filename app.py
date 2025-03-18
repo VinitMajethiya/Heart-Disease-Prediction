@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load the trained model
-model_path = '/mnt/data/logistic_regression_heart_model.pkl'
+model_path = 'D:\STUDY\PROJECTS\prediction_models\heart\logistic_regression_heart_model.pkl'
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
