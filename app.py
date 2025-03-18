@@ -1,11 +1,17 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
+import os
 
-# Load the trained model
+# Define model path
 model_path = 'D:\STUDY\PROJECTS\prediction_models\heart\logistic_regression_heart_model.pkl'
-with open(model_path, 'rb') as file:
-    model = pickle.load(file)
+
+# Check if model file exists
+if not os.path.exists(model_path):
+    st.error("❌ Model file not found! Please upload `logistic_regression_heart_model.pkl` to the correct directory.")
+else:
+    model = joblib.load(model_path)
+    st.success("✅ Model loaded successfully!")
 
 # Streamlit UI
 st.title("Heart Disease Prediction App")
